@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index')->name('homepage');
+Route::get('/category/{slug_categoryname}','CategoryController@index')->name('categorypage');
+Route::get('/product-detail/{slug_productname}', 'ProductController@index')->name('productpage');
+Route::get('/cart', 'CartController@index')->name('cartpage');
+Route::get('/payment', 'PaymentController@index')->name('paymentpage');
+Route::get('/order', 'OrderController@index')->name('orderspage');
+Route::get('/order-detail/{id}', 'OrderController@orderDetail')->name('orderdetailpage');
+
+
+Route::group(['prefix'=>'user'], function(){
+    Route::get('/login','UserController@loginPage')->name('loginpage');
+    Route::get('/signup','UserController@signupPage')->name('signuppage');
 });
