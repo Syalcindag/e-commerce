@@ -18,6 +18,8 @@ Route::get('/category/{slug_categoryname}','CategoryController@index')->name('ca
 Route::get('/product-detail/{slug_productname}', 'ProductController@index')->name('productpage');
 Route::get('/cart', 'CartController@index')->name('cartpage');
 Route::get('/payment', 'PaymentController@index')->name('paymentpage');
+Route::get('/order', 'OrderController@index')->name('orderspage');
+Route::get('/order-detail/{id}', 'OrderController@orderDetail')->name('orderdetailpage');
 
 Route::view('/category', 'category');
 Route::view('/cart', 'cart');
