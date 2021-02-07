@@ -21,6 +21,3 @@ Route::get('/payment', 'PaymentController@index')->name('paymentpage');
 Route::get('/order', 'OrderController@index')->name('orderspage');
 Route::get('/order-detail/{id}', 'OrderController@orderDetail')->name('orderdetailpage');
 
-Route::view('/category', 'category');
-Route::view('/cart', 'cart');
-Route::view('/product-detail', 'product-detail');
