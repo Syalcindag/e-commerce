@@ -21,3 +21,8 @@ Route::get('/payment', 'PaymentController@index')->name('paymentpage');
 Route::get('/order', 'OrderController@index')->name('orderspage');
 Route::get('/order-detail/{id}', 'OrderController@orderDetail')->name('orderdetailpage');
 
+
+Route::group(['prefix'=>'user'], function(){
+    Route::get('/login','UserController@loginPage')->name('loginpage');
+    Route::get('/signup','UserController@signupPage')->name('signuppage');
+});
